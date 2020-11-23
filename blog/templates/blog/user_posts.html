@@ -1,7 +1,10 @@
 	{% extends "blog/base.html" %}
 
 {% block content %}
-	{% for ps in post_list %}
+
+<h1 class = "mb-3"> Posts by {{ view.kwargs.username }}  ({{page_obj.paginator.count}})</h1>
+
+{% for ps in posts %}
 <article class="media content-section">
   <img class = "rounded-circle article-img" src = "{{ ps.author.profile.image.url }}">
   <div class="media-body">
@@ -34,4 +37,4 @@
     
    {% endif %}  
 
-{% endblock content %}	
+{% endblock content %}
